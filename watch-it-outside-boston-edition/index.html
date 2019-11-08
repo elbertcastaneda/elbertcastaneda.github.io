@@ -19,7 +19,7 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-md fixed-top navbar-dark main-menu menu-bg page-header">
+      <nav id="page-header" class="navbar navbar-expand-md fixed-top navbar-dark main-menu menu-bg page-header">
         <a class="navbar-brand" href="#home">Boston festival 2019</a>
         <button
           class="navbar-toggler"
@@ -35,13 +35,13 @@
 
         <div class="collapse navbar-collapse" id="real-menu">
           <ul class="navbar-nav mx-auto menu-list" >
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="#home">Home</a>
             </li>
             <li class="nav-item dropdown">
               <a
                 class="nav-link dropdown-toggle"
-                href=""
+                href="#"
                 id="dd-dates"
                 data-toggle="dropdown"
                 aria-haspopup="true"
@@ -49,7 +49,7 @@
               >
                 Movies
               </a>
-              <div class="dropdown-menu animate slideIn menu-bg" aria-labelledby="dd-dates">
+              <div class="nav-item dropdown-menu animate slideIn menu-bg" aria-labelledby="dd-dates">
                 <a class="dropdown-item" href="#movies-5th">5th August</a>
                 <a class="dropdown-item" href="#movies-6th">6th August</a>
                 <a class="dropdown-item" href="#movies-7th">7th August</a>
@@ -57,7 +57,10 @@
               </div>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#registration">Register</a>
+                <a class="nav-link" href="#registration" onclick="">Register</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#news-and-updates">News&nbsp;&amp;&nbsp;Updates</a>
             </li>
           </ul>
         </div>
@@ -90,28 +93,38 @@
       </nav>
     </header>
 
-    <main role="main">
-
+    <main role="main" data-spy="scroll" data-target="#page-header" data-offset="190">
       <!-- Main jumbotron for a primary marketing message or call to action -->
       <section id="home">
         <div class="container"></div>
           <img src="images/home-bg.jpg" class="img-fluid" alt="boston park">
         </div>
-        <section class="jumbotron" id="home">
+        <section class="jumbotron">
           <div class="container">
-            <h1 class="display-3">Hello, world!</h1>
+            <!-- <h1 class="display-3">Hello, world!</h1>
             <p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>
-            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+            <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p> -->
+
+
+            <h2 class="display-3">
+              <span>
+                1<sup>st</sup> Watch it outside Boston film festival
+              </span>
+            </h2>
+            <h3>August 5 – August 8, 2019</h3>
+            <h4><span style="color: #003366;">"Watch it outside Boston edition" is an event that showcases the best movies from around the world for the Boston people.</span></h4>
+            <p>The aim of the festival is to bring the people of Boston together to watch great films and enjoy a good time from August 5 to 8 in the Boston Public Garden that can accommodate up to 1,500 people each day.</p>
           </div>
         </section>
       </section>
 
-      <section id="movies">
-        <div class="container">
+      <section id="movies" class="container">
+        <div id="movies-5th">
+          <h1>Movies</h1>
           <!-- Example row of columns -->
           <div class="row">
             <div class="col-md-4">
-              <h2>Heading</h2>
+              <h2>Avengers</h2>
               <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
               <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
             </div>
@@ -126,16 +139,52 @@
               <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
             </div>
           </div>
-          <hr>
-        </div> <!-- /container -->
+        </div>
+        <hr>
       </section>
 
-      <section id="registration">
+      <section id="registration" class="container" >
         <h1>Registration</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Choro</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+        </div>
+        <hr>
       </section>
 
-      <section id="news">
+      <section id="news-and-updates" class="container">
         <h1>News & updates</h1>
+        <div class="row">
+          <div class="col-md-4">
+            <h2>Choro</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+          <div class="col-md-4">
+            <h2>Heading</h2>
+            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
+          </div>
+        </div>
+        <hr>
       </section>
     </main>
 
@@ -144,8 +193,9 @@
     </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" ></script>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js" ></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="main.js" ></script>
   </body>
 </html>
