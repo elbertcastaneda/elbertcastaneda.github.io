@@ -45,8 +45,31 @@ h2>span {
   color: white;
 }
 
-.menu-list li:not(:last-child) {
-  margin-right: 50px;
+@media (min-width: 992px) {
+  .menu-list li:not(:last-child) {
+    margin-right: 50px;
+  }
+  .menu-list-media li:not(:last-child) {
+    margin-right: 10px;
+  }
+}
+
+@media (max-width: 766px) {
+  section#home {
+    margin-top: 59px;
+  }
+  .menu-list li:not(:last-child) {
+    margin-right: 0px;
+  }
+  .menu-list-media {
+    flex-direction: unset;
+  }
+  .menu-list-media li{
+    display: inline-block;
+  }
+  .menu-list-media li:not(:last-child) {
+    margin-right: 10px;
+  }
 }
 
 /**
@@ -94,4 +117,18 @@ h2>span {
 .slideIn {
   -webkit-animation-name: slideIn;
   animation-name: slideIn;
+}
+
+
+/** Override bootstrap style **/
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: #fff;
+  background-color: #215077;
+}
+
+a {
+  color:#215077;
+  text-decoration: none;
+  background-color: transparent;
 }
