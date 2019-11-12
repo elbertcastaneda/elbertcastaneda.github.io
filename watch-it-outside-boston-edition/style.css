@@ -132,3 +132,13 @@ a {
   text-decoration: none;
   background-color: transparent;
 }
+
+.btn-primary {
+  color: #fff;
+  background-color: #215077;
+  border-color: #215077;
+}
+
+.card-text {
+  font-size: 15px;
+}
