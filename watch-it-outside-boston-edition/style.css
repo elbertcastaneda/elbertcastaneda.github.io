@@ -11,7 +11,8 @@ body {
 main {
   position: relative;
   height: 100vh;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 h2>span {

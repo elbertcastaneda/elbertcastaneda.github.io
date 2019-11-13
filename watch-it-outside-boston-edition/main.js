@@ -2,6 +2,15 @@
   'strict mode';
   $('a.nav-link[href^="#"]:not([href="#"]),a.dropdown-item[href^="#"]', 'header').click('click', function(event) {
     var href = $(this).attr('href');
+    var $href = $("[href='"+ href +"'][role='tab']");
+    $href.trigger('click');
+
+    setTimeout(function () {
+      scrollToHref(href);
+    }, 200);
+  });
+
+  function scrollToHref (href) {
     var $section2Scroll = $(href);
     var $main = $('main');
     var sectionTop = $section2Scroll.offset().top - 180;
@@ -12,10 +21,13 @@
 
     $main.animate({
       scrollTop: moveScrollStopTo
-    }, Math.abs(currentScroll -  moveScrollStopTo), () => {
+    }, Math.abs(currentScroll -  moveScrollStopTo), function() {
+      // Patch to fix scrollspy
+      $main.scrollTop($main.scrollTop() - 50);
+      $main.scrollTop($main.scrollTop() + 50);
+      $('main[data-spy="scroll"]').scrollspy('refresh');
     });
-    // event.preventDefault();
-  });
+  }
 
   function leftSlide(tab){
     var $tab = $(tab);
@@ -35,15 +47,15 @@
       var $toTarget = $(e.target);
       var fromDayEvent = Number($fromTarget.attr('id').replace(/(movies-)|(th-tab)/g, ''));
       var toDayEvent = Number($toTarget.attr('id').replace(/(movies-)|(th-tab)/g, ''));
-      console.log(fromDayEvent, toDayEvent);
+      // console.log(fromDayEvent, toDayEvent);
       var tab = $(this).attr('href');
 
       if (fromDayEvent < toDayEvent){
         rightSlide(tab);
-        console.log('left => right');
+        // console.log('left => right');
       } else {
-        console.log('right => left');
+        // console.log('right => left');
         leftSlide(tab);
       }
-  })
+  });
 })();
