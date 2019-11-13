@@ -35,6 +35,10 @@ h2>span {
 .page-header .social-icons a img {
   width: 42px;
   height: 42px;
+
+}
+.page-header .social-icons a img:hover {
+  opacity: 0.6;
 }
 
 .menu-bg {
