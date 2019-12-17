@@ -64,7 +64,40 @@
     return quotes;
   }
 
-  console.log(buildQuotes(motivationQuotes, 3));
-  console.log(buildQuotes(successQuotes, 4));
+  function onClickMotivationalButton(e) {
+    const totalQuotes = Number(e.target.innerText);
+    const showQuotes = document.getElementById('show-quotes');
+    const quotes = buildQuotes(motivationQuotes, totalQuotes);
+    const quotesHtml = quotes.reduce(function (motivationQuotesHtml, quote) {
+      return `${motivationQuotesHtml}\n<p>- ${quote}</p>`;
+    }, '');
+    showQuotes.innerHTML = `<div class="alert alert-info" role="alert">
+    ${quotesHtml}
+  </div>`;
 
+  }
+
+  function onClickSuccessButton(e) {
+    const totalQuotes = Number(e.target.innerText);
+    const showQuotes = document.getElementById('show-quotes');
+    const quotes = buildQuotes(successQuotes, totalQuotes);
+    const quotesHtml = quotes.reduce(function (successQuotesHtml, quote) {
+      return `${successQuotesHtml}\n<p>- ${quote}</p>`;
+    }, '');
+    showQuotes.innerHTML = `<div class="alert alert-success" role="alert">
+    ${quotesHtml}
+  </div>`;
+  }
+
+  const totalMotivationButtons = document.querySelectorAll('[name="totalMotivation"]');
+  for (let iMotivational = 0; iMotivational < totalMotivationButtons.length; iMotivational++) {
+    const motivationalButton = totalMotivationButtons[iMotivational];
+    motivationalButton.addEventListener('click', onClickMotivationalButton);
+  }
+
+  const totalSuccessButtons = document.querySelectorAll('[name="totalSuccess"]');
+  for (let iSuccess = 0; iSuccess < totalSuccessButtons.length; iSuccess++) {
+    const successButton = totalSuccessButtons[iSuccess];
+    successButton.addEventListener('click', onClickSuccessButton);
+  }
 })();

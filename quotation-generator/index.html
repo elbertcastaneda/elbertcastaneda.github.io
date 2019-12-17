@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Favicons -->
+    <!-- Favicon -->
     <link rel="apple-touch-icon" href="favicon.ico" sizes="72x72">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
@@ -30,13 +30,38 @@
       <section id="choose-quote-type">
         <ul>
           <li>
-            <button>Motivation</button>
+            <button
+              class="btn btn-info dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >Motivation</button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item" name="totalMotivation">1</button>
+              <button class="dropdown-item" name="totalMotivation">2</button>
+              <button class="dropdown-item" name="totalMotivation">3</button>
+              <button class="dropdown-item" name="totalMotivation">4</button>
+              <button class="dropdown-item" name="totalMotivation">5</button>
+            </div>
           </li>
           <li>
-            <button>Success</button>
+            <button
+              class="btn btn-success dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >Success</button>
+            <div class="dropdown-menu">
+              <button class="dropdown-item" name="totalSuccess">1</button>
+              <button class="dropdown-item" name="totalSuccess">2</button>
+              <button class="dropdown-item" name="totalSuccess">3</button>
+              <button class="dropdown-item" name="totalSuccess">4</button>
+              <button class="dropdown-item" name="totalSuccess">5</button>
+            </div>
           </li>
         </ul>
       </section>
+      <section id="show-quotes"></section>
     </main>
 
     <footer class="container">
