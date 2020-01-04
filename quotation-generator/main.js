@@ -34,10 +34,9 @@
       'don\'t happen,',
     ],
     third: [
-      'final.',
-      'fatal.',
-      'to continue that counts.',
-      'you create them.',
+      'fatal',
+      'to continue that counts',
+      'you create them',
     ],
   };
 
@@ -52,7 +51,7 @@
   function selectShuffleQuote(fragmentsSource) {
     return selectShuffleWord(fragmentsSource.first) + ' ' +
       selectShuffleWord(fragmentsSource.second) + ' ' +
-      selectShuffleWord(fragmentsSource.third);
+      selectShuffleWord(fragmentsSource.third) + '.';
   }
 
   function buildQuotes(fragmentsSource, totalQuotes) {
